@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini-Sito sull'Intelligenza Artificiale</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      color: #2575fc;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 20px;
+    }
+    section img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+    section img:hover {
+      transform: scale(1.03);
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #333;
+      color: white;
+      margin-top: 50px;
+    }
+
+    /* Stili Quiz */
+    .quiz-button {
+      display: inline-block;
+      background-color: #2575fc;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+      margin: 20px 0;
+    }
+    .quiz-button:hover {
+      background-color: #6a11cb;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 25px 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      text-align: center;
+      animation: fadeIn 0.5s;
+    }
+    .modal-content h3 {
+      margin-top: 0;
+      color: #2575fc;
+    }
+    .modal-content .question {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+    .modal-content button.option-btn {
+      margin: 8px 0;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      width: 100%;
+      transition: 0.2s;
+      background-color: #2575fc;
+      color: white;
+    }
+    .modal-content button.option-btn:hover {
+      transform: scale(1.05);
+    }
+    @keyframes fadeIn {
+      from {opacity:0; transform: translateY(-20px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>L'Intelligenza Artificiale</h1>
+    <p> Gruppo studenti del corso sull'IA - ITTS C. Grassi</p>
+  </header>
+
+  <section>
+    <h2>Cos’è l’Intelligenza Artificiale</h2>
+    <img src="https://dnewpydm90vfx.cloudfront.net/wp-content/uploads/2023/10/Intelligenza-artificiale-e-normativa-UE.jpg" alt="Intelligenza Artificiale">
+    <p>L'Intelligenza Artificiale (IA) è come un "cervello" creato dai computer. Permette alle macchine di fare cose che normalmente fanno gli esseri umani, come pensare, imparare, prendere decisioni o capire ciò che accade intorno a loro.</p>
+    <p>Per esempio, quando chiedi al tuo telefono di impostare una sveglia o a Siri qualcosa, stai usando l’IA: il computer capisce cosa vuoi e risponde o agisce.</p>
+  </section>
+
+  <section>
+    <h2>Esempi di IA nella vita quotidiana</h2>
+    <img src="https://images.unsplash.com/photo-1537498425277-c283d32ef9db?auto=format&fit=crop&w=1200&q=80" alt="IA nella vita quotidiana">
+    <ul>
+      <li><strong>Smartphone:</strong> il telefono riconosce facce e suggerisce messaggi.</li>
+      <li><strong>Giochi:</strong> nemici e compagni virtuali guidati dall’IA.</li>
+      <li><strong>YouTube / Netflix:</strong> suggerimenti basati sui tuoi gusti.</li>
+      <li><strong>Assistenti vocali:</strong> Alexa, Siri o Google rispondono alle tue richieste.</li>
+      <li><strong>Auto a guida autonoma:</strong> l’IA decide come muoversi in sicurezza.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>I Pro – Quando l’IA diventa un nostro alleato</h2>
+    <img src="https://www.digitalmente.cloud/wp-content/uploads/2024/04/aidesign_04.jpg" alt="Collaborazione umano IA">
+    <ul>
+      <li>Rende la vita più semplice: automatizza azioni quotidiane.</li>
+      <li>Velocizza il lavoro: analizza dati rapidamente.</li>
+      <li>Supporto nella medicina: diagnosi più veloci e precise.</li>
+      <li>Spinge l’innovazione scientifica: problemi complessi risolti più facilmente.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>I Contro – Le ombre dietro la magia</h2>
+    <img src="https://www.arcipelagomilano.org/wp-content/uploads/2019/04/Bizzotto-01.jpg" alt="Rischio dati e privacy IA">
+    <ul>
+      <li><strong>Privacy e dati personali:</strong> i dispositivi raccolgono molte informazioni su di noi.</li>
+      <li><strong>Dipendenza tecnologica:</strong> potremmo perdere abilità manuali o di memoria.</li>
+      <li><strong>Mutamento del lavoro:</strong> alcune mansioni automatizzate, ma si creano nuovi lavori.</li>
+      <li><strong>Errori:</strong> l’IA può sbagliare se i dati sono errati o incompleti.</li>
+    </ul>
+  </section>
+
+  <!-- Pulsante quiz -->
+  <section style="text-align:center;">
+    <button class="quiz-button" onclick="openQuiz()">Fai il Mini-Quiz!</button>
+  </section>
+
+  <!-- Modal Quiz -->
+  <div id="quizModal" class="modal">
+    <div class="modal-content">
+      <h3>Quiz sull’IA</h3>
+      <div id="question-container"></div>
+      <div id="feedback" style="margin-top:15px;font-weight:bold;"></div>
+      <button onclick="nextQuestion()" id="nextBtn" style="display:none;background:#6a11cb;color:white;padding:10px 20px;border:none;border-radius:6px;margin-top:10px;cursor:pointer;">Prossima domanda</button>
+      <button onclick="closeQuiz()" style="background:#ccc;color:#333;padding:10px 20px;border:none;border-radius:6px;margin-top:10px;cursor:pointer;">Esci</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Perché scegliere il Grassi? Laboratori moderni, progetti innovativi e tecnologie all'avanguardia!</p>
+  </footer>
+
+  <script>
+    const questions = [
+      {
+        question: "Quale di questi è un esempio di IA nella vita quotidiana?",
+        options: ["Alberi", "Auto a guida autonoma", "Scarpe"],
+        answer: 1
+      },
+      {
+        question: "L’IA può aiutare in medicina?",
+        options: ["Sì", "No", "Solo in parte"],
+        answer: 0
+      },
+      {
+        question: "L’IA può commettere errori?",
+        options: ["No, è perfetta", "Sì, se i dati sono sbagliati", "Solo se è vecchia"],
+        answer: 1
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function openQuiz() {
+      document.getElementById("quizModal").style.display = "block";
+      showQuestion();
+    }
+
+    function closeQuiz() {
+      document.getElementById("quizModal").style.display = "none";
+      currentQuestion = 0;
+      score = 0;
+      document.getElementById("feedback").innerHTML = "";
+      document.getElementById("nextBtn").style.display = "none";
+    }
+
+    function showQuestion() {
+      const container = document.getElementById("question-container");
+      const feedback = document.getElementById("feedback");
+      feedback.innerHTML = "";
+      document.getElementById("nextBtn").style.display = "none";
+
+      container.innerHTML = "";
+      const q = questions[currentQuestion];
+
+      const qElem = document.createElement("div");
+      qElem.className = "question";
+      qElem.textContent = q.question;
+      container.appendChild(qElem);
+
+      q.options.forEach((opt, index) => {
+        let btn = document.createElement("button");
+        btn.className = "option-btn";
+        btn.textContent = opt;
+        btn.dataset.index = index;
+        btn.onclick = () => selectAnswer(index);
+        container.appendChild(btn);
+      });
+    }
+
+    function selectAnswer(index) {
+      const q = questions[currentQuestion];
+      const feedback = document.getElementById("feedback");
+      const buttons = document.querySelectorAll(".option-btn");
+
+      buttons.forEach(b => b.disabled = true);
+
+      if (index === q.answer) {
+        feedback.style.color = "green";
+        feedback.textContent = "Bravo! Risposta corretta ✅";
+        buttons[index].style.backgroundColor = "green";
+        score++;
+      } else {
+        feedback.style.color = "red";
+        feedback.textContent = `Ops! La risposta corretta era: ${q.options[q.answer]} ❌`;
+        buttons[index].style.backgroundColor = "red";
+        buttons[q.answer].style.backgroundColor = "green";
+      }
+
+      document.getElementById("nextBtn").style.display = "inline-block";
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        showQuestion();
+      } else {
+        const feedback = document.getElementById("feedback");
+        feedback.style.color = "#2575fc";
+        feedback.textContent = `Hai completato il quiz! Punteggio: ${score} / ${questions.length} 🏆`;
+        document.getElementById("nextBtn").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
